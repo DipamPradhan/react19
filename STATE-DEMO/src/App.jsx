@@ -1,21 +1,23 @@
-import './App.css'
-import { Counter } from './Counter'
-import { LoginCard } from './LoginCard'
-import { PrevStateCounter } from './PrevStateCounter'
-import { SimpleCounter } from './SimpleCounter'
-import { UserDashboard } from './UserDashboard'
+import "./App.css";
+import { BatchingCounter } from "./BatchingCounter";
+import { Counter } from "./Counter";
+import { LoginCard } from "./LoginCard";
+import { PrevStateCounter } from "./PrevStateCounter";
+import { SimpleCounter } from "./SimpleCounter";
+import { UserDashboard } from "./UserDashboard";
 function App() {
   return (
     <>
-    <h1>Dipam Pradhan</h1>
-    {/* <Counter/>
+      <h1>Dipam Pradhan</h1>
+      {/* <Counter/>
     <Counter/>
     <LoginCard/>
     <UserDashboard isPremium={true}/>
-    <SimpleCounter /> */}
-    <PrevStateCounter />
+    <SimpleCounter /> 
+      <PrevStateCounter /> */}
+      <BatchingCounter />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
