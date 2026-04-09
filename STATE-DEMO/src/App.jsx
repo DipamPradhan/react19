@@ -5,6 +5,7 @@ import { LoginCard } from "./LoginCard";
 import { PrevStateCounter } from "./PrevStateCounter";
 import { SimpleCounter } from "./SimpleCounter";
 import { UserDashboard } from "./UserDashboard";
+import { UserProfile } from "./UserProfile";
 function App() {
   return (
     <>
@@ -14,8 +15,9 @@ function App() {
     <LoginCard/>
     <UserDashboard isPremium={true}/>
     <SimpleCounter /> 
-      <PrevStateCounter /> */}
-      <BatchingCounter />
+      <PrevStateCounter /> 
+      <BatchingCounter />*/}
+      <UserProfile />
     </>
   );
 }
