@@ -7,6 +7,7 @@ import { SimpleCounter } from "./SimpleCounter";
 import { TodoList } from "./TodoList";
 import { UserDashboard } from "./UserDashboard";
 import { UserProfile } from "./UserProfile";
+import { ShoppingCart } from "./ShoppingCart";
 function App() {
   return (
     <>
@@ -19,7 +20,8 @@ function App() {
       <PrevStateCounter /> 
       <BatchingCounter />
       <UserProfile /> */}
-      <TodoList />
+      {/* <TodoList /> */}
+      <ShoppingCart/>
     </>
   );
 }
