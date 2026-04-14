@@ -9,6 +9,7 @@ import { UserDashboard } from "./UserDashboard";
 import { UserProfile } from "./UserProfile";
 import { ShoppingCart } from "./ShoppingCart";
 import { CounterWithReducer } from "./CounterwithReducer";
+import { ShoppingCartWithReducer } from "./ShoppingCartWithReducer";
 function App() {
   return (
     <>
@@ -22,8 +23,9 @@ function App() {
       <BatchingCounter />
       <UserProfile /> */}
       {/* <TodoList /> */}
-      <ShoppingCart />
-      <CounterWithReducer />
+      {/* <ShoppingCart />
+      <CounterWithReducer /> */}
+      <ShoppingCartWithReducer />
     </>
   );
 }
