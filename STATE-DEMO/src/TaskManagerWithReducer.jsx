@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-
+import { useState } from "react";
 const initialState = {
   tasks: [],
   totalTasks: 0,
@@ -91,6 +91,9 @@ const reducer = (state, action) => {
         ),
       };
     }
+    case "CLEAR": {
+      return initialState;
+    }
     default:
       return state;
   }
@@ -98,6 +101,7 @@ const reducer = (state, action) => {
 
 export const TaskManagerWithReducer = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [input, setInput] = useState("");
   const tasks = [
     {
       id: 1,
@@ -122,19 +126,35 @@ export const TaskManagerWithReducer = () => {
   return (
     <div>
       <h1>Task Manager</h1>
+      <input
+        type="text"
+        placeholder="Enter task..."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
 
-      {tasks.map((task) => (
-        <div key={task.id}>
-          <h4>
-            {task.title} - {task.status} - {task.priority}
-          </h4>
-          <button onClick={() => dispatch({ type: "ADD_TASK", payload: task })}>
-            Add Task
-          </button>
-        </div>
-      ))}
+      <button
+        onClick={() => {
+          if (!input.trim()) return;
+
+          dispatch({
+            type: "ADD_TASK",
+            payload: {
+              id: Date.now(),
+              title: input,
+              status: STATUS.Pending,
+              priority: PRIORITY.Low,
+            },
+          });
+
+          setInput("");
+        }}
+      >
+        Add Task
+      </button>
       <div>
         <h3>Task List</h3>
+
         {state.tasks.length === 0 ? (
           <p>No Task Added Currently</p>
         ) : (
@@ -194,6 +214,9 @@ export const TaskManagerWithReducer = () => {
         )}
         <h5>Total Tasks: {state.totalTasks}</h5>
         <h5>Completed Tasks: {state.completedTasks}</h5>
+        {state.tasks.length > 0 && (
+          <button onClick={() => dispatch({ type: "CLEAR" })}>Clear All</button>
+        )}
       </div>
     </div>
   );
