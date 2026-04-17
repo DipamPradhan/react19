@@ -102,27 +102,7 @@ const reducer = (state, action) => {
 export const TaskManagerWithReducer = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [input, setInput] = useState("");
-  const tasks = [
-    {
-      id: 1,
-      title: "Wash Clothes",
-      status: STATUS.Pending,
-      priority: PRIORITY.Low,
-    },
-    {
-      id: 2,
-      title: "Buy Groceries",
-      status: STATUS.Pending,
-      priority: PRIORITY.Low,
-    },
-    { id: 3, title: "Run 10 KM", status: STATUS.Pending, priority: "Low" },
-    {
-      id: 4,
-      title: "Clean Bathroom",
-      status: STATUS.Pending,
-      priority: PRIORITY.Low,
-    },
-  ];
+
   return (
     <div>
       <h1>Task Manager</h1>
@@ -132,6 +112,7 @@ export const TaskManagerWithReducer = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
+        
 
       <button
         onClick={() => {

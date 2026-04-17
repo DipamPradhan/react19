@@ -12,6 +12,7 @@ import { CounterWithReducer } from "./CounterwithReducer";
 import { ShoppingCartWithReducer } from "./ShoppingCartWithReducer";
 import { CounterWithInit } from "./CounterWithInit";
 import { TaskManagerWithReducer } from "./TaskManagerWithReducer";
+import { CustomCounter } from "./CustomCounter";
 function App() {
   return (
     <>
@@ -28,7 +29,8 @@ function App() {
       <CounterWithReducer /> */}
       {/* <ShoppingCartWithReducer /> */}
       {/* <CounterWithInit /> */}
-      <TaskManagerWithReducer />
+      {/* <TaskManagerWithReducer /> */}
+      <CustomCounter />
     </>
   );
 }
